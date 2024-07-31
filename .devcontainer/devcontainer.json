@@ -1,0 +1,48 @@
+// https://aka.ms/devcontainer.json
+{
+  "name": "Existing Docker Compose (Extend)",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "laravel.test",
+  "workspaceFolder": "/var/www/html",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DEVSENSE.phptools-vscode",
+        "onecentlin.laravel-blade",
+        "mikestead.dotenv",
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[php]": {
+          "editor.tabSize": 4,
+          "editor.indentSize": "tabSize",
+          "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+        },
+        "[blade]": {
+          "editor.tabSize": 2,
+          "editor.indentSize": "tabSize",
+          "editor.defaultFormatter": "onecentlin.laravel-blade"
+        },
+        "php.codeLens.enabled": false,
+        "php.problems.excludeGitIgnore": true,
+        "php.inlayHints.insertOnDoubleClick": false,
+        "php.problems.exclude": {
+          "vendor/**": true,
+          "/": [408]
+        },
+        "blade.format.enable": true
+      }
+    }
+  },
+  "remoteUser": "sail",
+  "postCreateCommand": "chown -R 1000:1000 /var/www/html 2>/dev/null || true",
+  "shutdownAction": "stopCompose"
+  // "forwardPorts": [],
+  // "runServices": [],
+  // "shutdownAction": "none",
+}
