@@ -109,7 +109,7 @@
     <main class="container flex-1 py-4 lg:py-8">
       @session('success')
       <div x-data="{ open: true }" x-show="open"
-        class="relative mb-4 flex items-center rounded-md border border-emerald-600 bg-emerald-600/10 text-sm md:text-base px-3 py-4 font-medium text-emerald-600 lg:mb-8">
+        class="max-w-5xl min-w-0 mx-auto relative mb-4 flex items-center rounded-md border border-emerald-600 bg-emerald-600/10 text-sm md:text-base px-3 py-4 font-medium text-emerald-600 lg:mb-8">
         <i class="size-5 i-lucide-circle-check mr-2"></i>
         <p>{{ $value }}</p>
         <button x-on:click="open=false" class="absolute right-2 top-2 hover:text-emerald-700">
